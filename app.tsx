@@ -40,6 +40,12 @@ export default function App() {
     }
   }
 
+  const handleLogin = () => {
+  // Нэвтрэх логик энд бичигдэнэ
+  console.log("User logged in");
+};
+
+
   // Show login modal if trying to access admin without being logged in as admin
   useEffect(() => {
     if (currentPage === "admin" && (!isLoggedIn || userData?.role !== "admin")) {
@@ -78,6 +84,7 @@ export default function App() {
           onLogout={handleLogout}
           onOpenLogin={() => setIsLoginModalOpen(true)}
           onGoToAdmin={handleGoToAdminPage}
+          onLogin={handleLogin}
         />
       )}
     </>
