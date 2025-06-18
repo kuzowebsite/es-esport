@@ -868,7 +868,9 @@ export default function EsportsPlatform({
                               className="w-full h-full object-cover"
                               onError={(e) => {
                                 e.currentTarget.style.display = "none"
-                                e.currentTarget.nextElementSibling.style.display = "flex"
+                                if (e.currentTarget.nextElementSibling) {
+                                  (e.currentTarget.nextElementSibling as HTMLElement).style.display = "flex"
+                                }
                               }}
                             />
                           ) : (
@@ -1054,7 +1056,9 @@ export default function EsportsPlatform({
                                 onError={(e) => {
                                   // Fallback to user icon if image fails to load
                                   e.currentTarget.style.display = "none"
-                                  e.currentTarget.nextElementSibling.style.display = "flex"
+                                  if (e.currentTarget.nextElementSibling) {
+                                    (e.currentTarget.nextElementSibling as HTMLElement).style.display = "flex"
+                                  }
                                 }}
                               />
                             ) : (
